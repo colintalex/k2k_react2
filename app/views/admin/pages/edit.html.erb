@@ -1,0 +1,17 @@
+<%= form_for @book do |f| %>
+<ul id='edit-pages' class="sortable sortable-pages">
+  <% @book.pages.ordered.each_with_index do |page, index| %>
+  <li class="ui-state-default" data-page-id="<%= page.id %>" data-page-number="<%= index %>" >
+  <div class="book-page-container">
+    <%= image_tag page.image.variant(resize_to_limit: [200,300]), data: {page_number: index} %>
+    <div class="page-index-overlay noselect">
+        <%= index %>
+    </div>
+  </div>
+  </li>
+  <% end %>
+</ul>
+<% end %>
+<button id="edit-pages-save-btn" class="save-button" type='Submit' data-book-id="<%= @book.id %>">
+  Save
+</button>

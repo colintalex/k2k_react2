@@ -1,0 +1,14 @@
+<div class="container">
+<%= button_to 'New Workshop', new_admin_workshop_path, method: :get %>
+<div class="dash-grid">
+<% @workshops.each do |w| %>
+    <div class="card container">
+        <%= w.name %>
+        <%= w.date %>
+        <%= link_to "RSVP's", admin_reservations_path(workshop_id: w.id) %>
+        <%= link_to "New RSVP", new_admin_reservation_path(workshop_id: w.id) %>
+        <%= link_to "Edit Workshop", "/admin/workshops/#{w.id}/edit" %>
+    </div>
+<% end %>
+</div>
+</div>

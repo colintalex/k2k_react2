@@ -1,0 +1,14 @@
+<h1>Blog Page</h1>
+<div class="posts-container container">
+<% @posts.each do |post| %>
+    <div class="card">
+        <div class="card-body">
+
+            <h5 class='card-title'><%= post.title %></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><%= post.author %></h6>
+            <p class="card-text"><%= post.short_description %></p>
+            <%= link_to 'Read More..', post_path(post) %>
+        </div>
+    </div>
+<% end %>
+</div>

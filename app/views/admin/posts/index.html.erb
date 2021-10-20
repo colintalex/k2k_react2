@@ -1,0 +1,20 @@
+<%= button_to 'New Post', new_admin_post_path, method: :get %>
+<div class="posts-container container">
+    <ul id="posts-list" class="list">
+        <% @posts.each do |post| %>
+        <li>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class='card-title'><%= post.title %></h5>
+                    <h6 class="card-subtitle mb-2 text-muted"><%= post.author %></h6>
+                    <p class="card-text"><%= post.short_description %></p>
+                    <%= link_to 'Read More..', post_path(post) %>
+                    <%= link_to post.id, admin_post_path(post) %>
+                    <%= link_to 'Edit Post', edit_admin_post_path(post) %>
+                    <%= link_to 'Delete Post', "/admin/posts/#{post.id}", method: :delete %>
+                </div>
+            </div>
+        </li>
+        <% end %>
+    </ul>
+</div>

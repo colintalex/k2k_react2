@@ -1,0 +1,10 @@
+<h1>Contact#new</h1>
+
+<%= form_with url: send_contact_path, method: :post do |f| %>
+    <%= f.text_field :name, placeholder: 'Name' %>
+    <%= f.text_field :phone_number, placeholder: 'Phone Number' %>
+    <%= f.text_field :email, placeholder: 'E-Mail' %>
+    <%= f.text_field :subject %>
+    <%= f.text_area :message, size: "35x10" %>
+    <%= f.submit 'Submit', disabled: true %>
+<% end %>

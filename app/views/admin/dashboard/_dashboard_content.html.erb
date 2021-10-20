@@ -1,0 +1,14 @@
+<div class="container-sm">
+  <h2> Welcome <%= @current_user.name_first %>!</h2>
+  <div class="card">
+    Total Books: <%= @books.count %>
+  </div>
+  <div class="card">
+    Total Blog Posts: <%= @posts.count %>
+  </div>
+  <div class="card">
+    <% workshop = @workshops.first() %>
+    Next Workshop: <%= workshop.date %>
+    <%= workshop.reservations.length %> / <%= workshop.max_reservations %> Tickets Sold
+  </div>
+</div>

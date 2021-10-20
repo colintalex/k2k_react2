@@ -1,0 +1,29 @@
+<%= form_with model: [workshop, reservation], url: url do |f|  %>
+    <%= f.hidden_field :workshop_id %>
+    <div class="mb-3">
+        <%= f.label :name_first, 'First Name', class: "form-label" %>
+        <%= f.text_field :name_first %>
+        <%= f.label :name_last, 'Last Name', class: "form-label" %>
+        <%= f.text_field :name_last %>
+        <%= f.label :email, 'Email' , class: "form-label" %>
+        <%= f.text_field :email %>
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        <%= f.label :phone_number, 'Phone', class: "form-label" %>
+        <%= f.text_field :phone_number %>
+    </div>
+ 
+    <div class="mb-3">
+    </div>
+        <div class="mb-3">
+    <%= f.label :grade, 'Grade Level', class: "form-label" %>
+    <%= f.text_field :grade %>
+    <%= f.label :safety_notes, 'Safety Notes', class: "form-label" %>
+    <%= f.text_area :safety_notes %>
+    <%= f.label :other_notes, 'Anything else?', class: "form-label" %>
+    <%= f.text_area :other_notes %>
+    <%= f.label :ticket_count, 'Ticket Qty', class: "form-label" %>
+    <%= f.number_field :ticket_count %>
+    </div>
+
+    <%= f.submit %>
+<% end %>

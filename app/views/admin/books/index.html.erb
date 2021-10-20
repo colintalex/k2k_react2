@@ -1,0 +1,25 @@
+<%= link_to 'New Book', new_admin_book_path %>
+
+<ul class="book-list 0">
+<% @books.each_with_index do |book, index| %>
+    <li>
+    <div class="book">
+        <% if book.pages.ordered.first.present? %>
+            <%= link_to book_path(book.id) do %>
+                <%= image_tag book.pages.ordered.first.variant(resize_to_limit: [200,300]) %>
+            <% end %>
+        <% end %>
+        <div class="hover-buttons">
+            <div class="hover-btn-wrapper">
+                <button type="button" class="btn btn-primary">
+                    <%= link_to 'Edit', edit_admin_book_path(book.id), method: :get %>
+                </button>
+                <button type="button" class="btn btn-primary">
+                    <%= link_to 'Delete', "/admin/books/#{book.id}", method: :delete %>
+                </button>
+            </div>
+        </div>
+    </div>
+    </li>
+<% end %>
+</ul>

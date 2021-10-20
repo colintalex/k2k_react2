@@ -1,0 +1,11 @@
+<%= form_with model: @post, url: "/admin/posts/#{@post.id}"  do |f| %>
+  <%= f.label :title, 'Post Title' %>
+  <%= f.text_field :title %>
+  <%= f.label :author, 'Author' %>
+  <%= f.text_field :author %>
+  <%= f.label :short_description, 'Short Description' %>
+  <%= f.text_field :short_description %>
+
+  <%= f.text_area :content, id: 'post-editor' %>
+  <%= f.submit %>
+<% end %>

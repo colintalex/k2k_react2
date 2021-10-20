@@ -1,0 +1,10 @@
+<h1>New Book</h1>
+
+<%= form_with model: @book, url: '/admin/books' do |f| %>
+    <%= f.text_field :title, placeholder: 'Title' %>
+    <%= f.text_field :author, placeholder: 'Author' %>
+    <%= f.text_field :illustrator, placeholder: 'Illustrator' %>
+    <%= f.text_area :description, placeholder: 'Description', size: "30x6" %>
+    <%= f.file_field :images, image: true, multiple: true %>
+    <%= f.submit 'Submit' %>
+<% end %>

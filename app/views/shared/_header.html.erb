@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+ <%= params[:admin] %>
+    <div class="container-md" id="nav-wrapper">
+        <%= image_tag('k2k_logo') %>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                <li class="nav-item">
+                    <%= link_to 'Home', root_path, 
+                            class:  'nav-link ' + active_class?(root_path) %>
+                </li>
+
+                <li class="nav-item">
+                    <%= link_to 'Books', books_path, 
+                            class: 'nav-link ' + active_class?(books_path) %>
+                </li>
+
+                <li class="nav-item">
+                    <%= link_to 'About', about_path, 
+                            class: 'nav-link ' + active_class?(about_path) %>
+                </li>
+
+                <li class="nav-item">
+                    <%= link_to 'Contact', contact_path, 
+                            class: 'nav-link ' + active_class?(contact_path) %>
+                </li>
+
+                <li class="nav-item">
+                    <%= link_to 'Just For Fun', '#', 
+                            class: 'nav-link ' + active_class?('#') %>
+                </li>
+
+                <li class="nav-item">
+                    <%= link_to 'Blog', blog_path, 
+                            class: 'nav-link ' + active_class?(blog_path)  %>
+                </li>
+                <% if current_admin? %>
+                <li class="nav-item">
+                    <%= link_to 'Admin', '/admin', 
+                            class: 'nav-link ' + active_class?(blog_path)  %>
+                </li>
+                <li class="nav-item">
+                    <%= link_to 'Logout', admin_logout_path,
+                            class: 'nav-link ' + active_class?(blog_path)  %>
+                </li>
+                <% end %>
+
+            </ul>
+        </div>
+    </div>
+</nav>

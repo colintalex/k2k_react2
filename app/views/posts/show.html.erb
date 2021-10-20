@@ -1,0 +1,17 @@
+<% if current_admin? %>
+    <%= link_to '<- Back to Blog', admin_posts_path %>
+<% else %>
+    <%= link_to '<- Back to Blog', posts_path %>
+<% end %>
+<div class="post-container container">
+    <div class="card">
+        <div class="card-body">
+            <h6 class="card-subtitle float-end mr-2 text-muted"><%= @post.formatted_date %></h6>
+            <h5 class='card-title'><%= @post.title %></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><%= @post.author %></h6>
+            <p class="card-text"><%= @post.short_description %></p>
+            <hr>
+            <p class="card-text"><%= @post.content.html_safe %><p>
+        </div>
+    </div>
+</div>

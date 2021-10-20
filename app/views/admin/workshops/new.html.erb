@@ -1,0 +1,43 @@
+<div class="container form-container">
+<%= form_with model: @workshop, url: '/admin/workshops', class: "form-group" do |f|  %>
+    <div class="mb-3">
+        <%= f.label :name, 'Name', class: "form-label" %>
+        <%= f.text_field :name %>
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+        <%= f.label :short_description, 'Short Desc.', class: "form-label" %>
+        <%= f.text_field :short_description %>
+        <%= f.label :description, 'Description' , class: "form-label" %>
+        <%= f.text_field :description %>
+    </div>
+        <div class="mb-3">
+    <%= f.label :date, 'Date', class: "form-label" %>
+    <%= f.datetime_local_field :date %>
+    </div>
+        <div class="mb-3">
+    <%= f.label :street, 'Street', class: "form-label" %>
+    <%= f.text_field :street %>
+    <%= f.label :city, 'City', class: "form-label" %>
+    <%= f.text_field :city %>
+    <%= f.label :state, 'State', class: "form-label" %>
+    <%= f.text_field :state %>
+    <%= f.label :zip, 'ZIP', class: "form-label" %>
+    <%= f.text_field :zip %>
+    </div>
+    <div class="mb-3">
+        <%= f.label :free?, 'Free', class: "form-label" %>
+        <%= f.check_box :free? %>
+        <%= f.label :cost, 'Cost', class: "form-label" %>
+        <%= f.number_field :cost %>
+        <%= f.label :max_reservations, 'Max_reservations', class: "form-label" %>
+        <%= f.number_field :max_reservations %>
+    </div>
+    <div class="mb-3">
+        <%= f.label :status, 'Status', class: "form-label" %>
+        <%= f.number_field :status %>
+    </div>
+
+    <%= f.submit %>
+<% end %>
+</div>

@@ -1,0 +1,11 @@
+
+<%= form_with model: @book do |f| %>
+    <%= f.text_field :title, placeholder: @book.title %>
+    <%= f.text_field :author, placeholder: 'Author' %>
+    <%= f.text_field :illustrator, placeholder: 'Illustrator' %>
+    <%= f.text_area :description, placeholder: 'Description', size: "30x6" %>
+    <%= f.submit 'Update/Save' %>
+<% end %>
+<%= image_tag @book.pages.first.variant( resize_to_limit: [200,300]) %>
+<%= button_to 'Edit Pages', admin_edit_book_pages_path(@book.id), method: 'get'%>
+<%= button_to 'Read Book', book_path(@book.id), method: 'get'%>

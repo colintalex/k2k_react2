@@ -1,0 +1,60 @@
+    <div class="carousel" id="home-carousel">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item ">
+                <%= image_tag ('page_header') %>
+            </div>
+            <div class="carousel-item active">
+                <%= image_tag ('k2k_about') %>
+            </div>
+            <div class="carousel-item">
+                <%= image_tag ('page_header') %>
+            </div>
+        </div>
+        </div>
+    </div>
+<div id="home" class="page-container">
+    <div id="quick-about-container" class="container">
+        <p>CONNECTING CHILDREN THROUGH LITERACY
+        We demystify the writing process by creating a safe space for our youngest authors to explore their thoughts and ideas.  All children have stories to tell and each workshop begins with storytelling which is a way to build their own community of writers.  During the workshop, we provide expert coaching to maintain focus and build creativity while maintaining
+        </p>
+    </div>
+    <div id="lrg-banner-container" class="container">
+    <h2>
+    Kid2KidLit is the proud recipient of the VELA meet the moment Grant!  Thank You VELA education fund.
+    </h2>
+    </div>
+    <div id="workshops-container">
+        <h3>Workshops</h3>
+        <ul>
+        <% @workshops.each do |work| %>
+        <li>
+            <%= work.name %>
+            <%= work.short_description %>
+            <%= work.date %>
+            <%= link_to 'Register', new_admin_reservation_path(workshop_id: work.id) %>
+            </li>
+        <% end %>
+        </ul>
+    </div>
+    <div id="sml-banner-container">
+     Smol Announcements
+    </div>
+    <div id="parents-reviews">
+    reviews
+    </div>
+    <div id="blog-widget" class="container">
+        <div class="posts-container ">
+            <% @posts.each do |post| %>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class='card-title'><%= post.title %></h5>
+                        <h6 class="card-subtitle mb-2 text-muted"><%= post.author %></h6>
+                        <p class="card-text"><%= post.short_description %></p>
+                        <%= link_to 'Read More..', post_path(post) %>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>
