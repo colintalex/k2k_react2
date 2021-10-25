@@ -1,4 +1,4 @@
-class Admin::PostsController < ApplicationController
+class Api::V1::Admin::PostsController < ApplicationController
     before_action :authenticate
     def new
         @post = Post.new

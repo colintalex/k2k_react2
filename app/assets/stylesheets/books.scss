@@ -1,0 +1,124 @@
+// Place all the styles related to the Books controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.page {
+    background-color: gray;
+    }
+
+#sortable.books {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 90%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+#sortable.books li {
+    margin: 3px 3px 3px 0;
+    padding: 1px;
+    float: left;
+    width: auto;
+    height: auto;
+    font-size: 4em;
+    text-align: center;
+}
+
+.flipbook-container {
+    padding-left: 50px
+}
+
+#flipbook {
+    margin: 25px auto;
+    left: 50%;
+    transform: translate(-50%, 0) !important;
+    transition: all 0.8s ease-in-out;
+}
+// Book Covers
+.book img {
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    filter: drop-shadow(1px 5px 10px gray);
+    
+    height: 300px;
+    width: 200px;
+}
+
+.book-list {
+    list-style: none;
+    text-align: center;
+    display: grid;
+    width: 80%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    margin: 15px auto;
+    vertical-align: middle;
+}
+
+.book-list li:nth-child(odd) {
+    grid-template-columns: 1fr !important;
+
+}
+
+.book-list li {
+    display: inline-block;
+    margin: 0 5px;
+    transform: rotate(0deg);
+    transition: 0.3s;
+
+    &:hover{
+        transition: 0.3s;
+        transform: rotate(0.2deg) scale(102%);
+    }
+}
+
+.shelf {
+    position: relative;
+    top: -85px;
+    z-index: -10;
+}
+
+.hover-buttons {
+    transition: .2s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 100;
+    height: 100%;
+    width: 100%;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+
+    .hover-btn-wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 12px;
+        
+    }
+
+    a{
+        color: black;
+        text-decoration: none;
+    }
+}
+
+.book {}
+
+.hover-buttons:hover {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.5);
+}

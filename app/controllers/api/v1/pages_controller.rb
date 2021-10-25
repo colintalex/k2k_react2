@@ -1,4 +1,4 @@
-class PagesController < ApplicationController
+class Api::V1::PagesController < ApplicationController
     def home
         @posts = Post.all
         @workshops = Workshop.all

@@ -1,4 +1,4 @@
-class Admin::WorkshopsController < ApplicationController
+class Api::V1::Admin::WorkshopsController < ApplicationController
     def index
         @workshops = Workshop.all()
     end

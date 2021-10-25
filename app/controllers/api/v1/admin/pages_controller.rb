@@ -1,4 +1,4 @@
-class Admin::PagesController < ApplicationController
+class Api::V1::Admin::PagesController < ApplicationController
     before_action :authenticate
     def edit
         @book = Book.find_by(id: params[:id])

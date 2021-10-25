@@ -1,0 +1,58 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: steelblue !important;
+}
+
+.posts {
+    #page-body{
+        max-width: 900px;
+        background-color: beige;
+
+        
+    
+    }
+}
+
+.admin_posts {
+    .post-editor {
+        max-width: 900px;
+        margin: auto;
+    }
+}
+
+.list {
+    list-style: none;
+}
+
+.pages#home{
+    #page-body {
+        height: auto;
+    }
+}
+
+#page-body {
+    height: calc(100% - 100px);
+    overflow: auto;
+    max-width: 100%;
+    margin: auto;
+}
+
+#dashboard-container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 200px auto;
+}
+
+#dashboard-content {
+    width: 100%;
+}
+
+.form-container {
+    max-width: 800px !important;
+    background-color: beige;
+    padding: 20px;
+}

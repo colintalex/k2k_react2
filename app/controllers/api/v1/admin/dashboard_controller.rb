@@ -1,4 +1,4 @@
-class Admin::DashboardController < ApplicationController
+class Api::V1::Admin::DashboardController < ApplicationController
     before_action :authenticate
     def index
         @books = Book.all()

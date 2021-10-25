@@ -5,3 +5,26 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Role.destroy_all
+User.destroy_all
+
+roles = [
+    { name: 'admin' },
+    { name: 'super_admin' }
+]
+
+roles.each do |role|
+    Role.create(role)
+end
+puts 'Created Roles...'
+
+User.create!(
+    name_first: 'Colin',
+    name_last: 'A.',
+    email: 'colintalex@gmail.com',
+    password: '123',
+    password_confirmation: '123',
+    role_id: Role.find_by(name: 'super_admin').id
+)
+puts 'Created Users...'

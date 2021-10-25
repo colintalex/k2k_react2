@@ -1,4 +1,4 @@
-class ContactController < ApplicationController
+class Api::V1::ContactController < ApplicationController
   def new
   end
 

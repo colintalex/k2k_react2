@@ -1,4 +1,4 @@
-class Admin::SessionsController < ApplicationController
+class Api::V1::Admin::SessionsController < ApplicationController
     def new;end
 
     def create

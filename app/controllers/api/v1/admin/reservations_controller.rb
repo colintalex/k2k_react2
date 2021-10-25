@@ -1,4 +1,4 @@
-class Admin::ReservationsController < ApplicationController
+class Api::V1::Admin::ReservationsController < ApplicationController
     def index
         @workshop = Workshop.find_by(id: params[:workshop_id])
         @reservations = @workshop.reservations
