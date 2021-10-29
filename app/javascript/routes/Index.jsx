@@ -8,6 +8,7 @@ import About from "../components/About/About";
 import Contact from "../components/Contact/Contact";
 import Dashboard from "../components/Admin/Dashboard";
 import Admin from "../components/Admin/Admin";
+import NewBook from "../components/Admin/Books/NewBook";
 
 export default (
   <Router>
@@ -18,6 +19,7 @@ export default (
       <Route path="/about" exact component={About} />
       <Route path="/contact" exact component={Contact} />
       <Route path="/admin" exact component={Admin} />
+      <Route path="/admin/books/new" exact component={NewBook} />
     </Switch>
   </Router>
 ); 

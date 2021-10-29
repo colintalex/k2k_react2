@@ -1,27 +1,18 @@
 import React, { useState } from "react";
-import { Redirect, useHistory } from "react-router";
 const axios = require('axios').default;
 
-function AdminLogin({ setAdmin, setLoggedIn }) {
+function AdminLogin({ setAdminUser, history }) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const history = useHistory();
 
   function login(e) {
     e.preventDefault();
-    const token = document.querySelector('[name=csrf-token]').content
-    
-    axios.defaults.headers.common['X-CSRF-TOKEN'] = token
-    axios.defaults.headers.common['Accept'] = 'application/json'
     
     axios.post('/api/v1/admin/login', {
       email,
       password})
       .then(resp => {
-        setAdmin(resp.data);
-        setLoggedIn(true);
-        localStorage.setItem('admin', resp.data)
-        localStorage.setItem('logged_in?', true)
+        setAdminUser(resp.data)
         history.push('/admin')
       })
       .catch(resp => {

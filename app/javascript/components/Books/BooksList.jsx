@@ -18,7 +18,7 @@ function BooksList() {
   books.forEach((book, index) => {
     booksList.push(
       <li key={index}>
-        {book.title}, {book.id}
+        Title: {book.title}, Author: {book.author} {book.id}
       </li>
     )
   });

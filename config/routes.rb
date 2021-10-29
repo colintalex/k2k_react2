@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       resources :posts, only: [:index, :show, :update_likes]
 
       namespace :admin, admin: true do
-        get '/login', to: 'sessions#new'
+        get '/login', to: 'sessions#token_authenticate'
         post '/login', to: 'sessions#create'
         get '/logout', to: 'sessions#destroy'
         
