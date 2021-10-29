@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 
-function BooksIndex() {
+function BooksList() {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ function BooksIndex() {
       })
   },[])
 
-  const booksList = []
+  const booksList = [];
   books.forEach((book, index) => {
     booksList.push(
       <li key={index}>
@@ -35,4 +35,4 @@ function BooksIndex() {
   )
 };
 
-export default BooksIndex;
+export default BooksList;

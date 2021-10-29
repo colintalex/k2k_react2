@@ -3,13 +3,13 @@ class Api::V1::Admin::SessionsController < ApplicationController
 
     def create
         user = User.find_by(email: params[:email].downcase)
-        
         if user&.authenticate(params[:password])
             session[:user_id] = user.id
-            redirect_to admin_dashboard_path
+            render json: user
         else
-            flash.now[:error] = 'Unknown user. Please check your username and password.'
-            render :action => "new"
+            # flash.now[:error] = 'Unknown user. Please check your username and password.'
+            render json: 'Error', status: 300
+            # render json: 'Error'
         end
     end
 
